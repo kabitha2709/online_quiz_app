@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Home from "./components/Home";
+import Registration from "./components/Registration";
+import About from "./components/About";
+import app from "./firebase";
 
 function App() {
+  console.log("Firebase App:", app);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Router>
+      <div>
+        <nav style={{ marginBottom: "20px" }}>
+          <Link to="/" style={{ margin: "0 10px" }}>Home</Link>
+          <Link to="/registration" style={{ margin: "0 10px" }}>Registration</Link>
+          <Link to="/about" style={{ margin: "0 10px" }}>About</Link>
+        </nav>
+        
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/registration" element={<Registration />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </div>
+      <div>
+      .........Firebase Connected ........
     </div>
+    </Router>
   );
 }
 
