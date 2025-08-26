@@ -1,0 +1,29 @@
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Home from "./components/Home";
+import Registration from "./components/Registration";
+import About from "./components/About";
+import app from "./firebase";
+
+function App() {
+  console.log("Firebase App:", app);
+  return (
+    <Router>
+      <div>
+        <nav style={{ marginBottom: "20px" }}>
+          <Link to="/" style={{ margin: "0 10px" }}>Home</Link>
+          <Link to="/registration" style={{ margin: "0 10px" }}>Registration</Link>
+          <Link to="/about" style={{ margin: "0 10px" }}>About</Link>
+        </nav>
+        
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/registration" element={<Registration />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </div>
+    </Router>
+  );
+}
+
+export default App;
