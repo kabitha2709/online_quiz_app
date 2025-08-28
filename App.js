@@ -4,6 +4,8 @@ import Registration from "./components/Registration";
 import About from "./components/About";
 import app from "./firebase";
 import UserList from "./components/UserList";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 
 function App() {
